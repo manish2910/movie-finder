@@ -1,0 +1,25 @@
+.search {
+    width: 100%;
+    display: flex;
+}
+  
+.search_term {
+    width: 100%;
+    border-right: none;
+    padding: 8px 15px;
+    height: 20px;
+    border-radius: 14px 0 0 14px;
+    border: none;
+    outline: none;
+}
+  
+.search_button {
+    width: 50px;
+    height: 36px;
+    text-align: center;
+    border-left: none;
+    border: none;
+    background: white;
+    border-radius: 0 14px 14px 0;
+    cursor: pointer;
+}

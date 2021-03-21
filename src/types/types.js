@@ -1,0 +1,8 @@
+export const SEARCH_QUERY = 'SEARCH_QUERY';
+export const CACHED_RESULT = 'CACHED_RESULT';
+export const SEARCH_RESULTS = 'SEARCH_RESULTS';
+export const MOVIE_DETAILS = 'MOVIE_DETAILS';
+
+export const CHANGE_THEME = 'CHANGE_THEME';
+
+export const LOADING = 'LOADING';
