@@ -1,0 +1,235 @@
+{
+    "q":[
+        {
+            "id":1,
+            "heading":"First, the basics",
+            "questions":[
+                {
+                    "id":"age",
+                    "label":"WHAT IS YOUR AGE?",
+                    "type":"number",
+                    "placeholder":"between 18 and 90 years",
+                    "validators":{  
+                        "min":"18",
+                        "max":"90",
+                        "isRequired":true
+                    },
+                    "value":""
+                },
+                {
+                    "id":"height",
+                    "label":"WHAT IS YOUR HEIGHT (IN CM)?",
+                    "type":"number",
+                    "placeholder":"between 120 and 210 cms",
+                    "validators":{
+                        "min":"120",
+                        "max":"210",
+                        "isRequired":true
+                    },
+                    "value":""
+                },
+                {
+                    "id":"weight",
+                    "label":"WHAT IS YOUR WEIGHT (IN KG)?",
+                    "type":"number",
+                    "placeholder":"between 30 and 240 Kgs ",
+                    "validators":{
+                        "min":"30",
+                        "max":"240",
+                        "isRequired":true
+                    },
+                    "value":""
+                },
+                {
+                    "id":"gender",
+                    "label":"WHAT WAS YOUR BIOLOGICAL GENDER AT BIRTH?",
+                    "type":"dropdown",
+                    "options":[
+                        {
+                            "key":"",
+                            "label":"CHOOSE"
+                        },
+                        {
+                            "key":"M",
+                            "label":"MALE"
+                        },
+                        {
+                            "key":"F",
+                            "label":"Female"
+                        }
+                    ],
+                    "validators":{
+                        "isRequired":true
+                    },
+                    "value":""
+                },
+                {
+                    "id":"pregnant",
+                    "dependentOn":"gender",
+                    "label":"ARE YOU PREGNANT?",
+                    "type":"dropdown",
+                    "options":[
+                        {
+                            "key":"",
+                            "label":"CHOOSE"
+                        },
+                        {
+                            "key":"Y",
+                            "label":"Yes"
+                        },
+                        {
+                            "key":"N",
+                            "label":"No"
+                        }
+                    ],
+                    "dependentValue":"F",
+                    "validators":{
+                        "isRequired":true
+                    },
+                    "value":""
+                },
+                {
+                    "id":"contraceptive",
+                    "dependentOn":"pregnant",
+                    "label":"ARE YOU TAKING ANY CONTRACEPTIVES?",
+                    "type":"dropdown",
+                    "options":[
+                        {
+                            "key":"",
+                            "label":"CHOOSE"
+                        },
+                        {
+                            "key":"Y",
+                            "label":"Yes"
+                        },
+                        {
+                           "key":"N",
+                           "label":"No"
+                        }
+                    ],
+                    "dependentValue":"N",
+                    "validators":{
+                        "isRequired":true
+                    },
+                    "value":""
+                }
+            ]
+        },
+        {
+            "id":2,
+            "heading":"Have you been on a diet before?",
+            "questions":[
+                {
+                    "id":"diet",
+                    "type":"checkbox",
+                    "options":[
+                        {
+                            "group":"1",
+                            "key":"N",
+                            "label":"No",
+                            "text":"Choose this if you have never followed a diet plan.",
+                            "isChecked":""
+                        },
+                        {
+                            "group":"2",
+                            "key":"KETO",
+                            "label":"KETOGENIC DIET",
+                            "text":"Keto diet is a high-fat, adequate-protein, low-carbohydrate diet.",
+                            "isChecked":""
+                        },
+                        {
+                            "group":"2",
+                            "key":"LAKWA",
+                            "label":"KETOGENIC LAKWA",
+                            "text":"Keto diet is a high-fat, adequate-protein, low-carbohydrate diet.",
+                            "isChecked":""
+                        },
+                        {
+                            "group":"2",
+                            "key":"OTHERS",
+                            "label":"Others",
+                            "text":"Choose this if you have taken any other form of diet plans.",
+                            "modal":true,
+                            "value":""
+                        }
+                    ],
+                    "validators":{
+                        "isRequired":true
+                    }
+                }
+            ]
+        },
+        {
+            "id":3,
+            "heading":"Do you smoke?",
+            "questions":[
+                {
+                    "id":"smoking",
+                    "type":"dropdown",
+                    "options":[
+                        {
+                            "key":"",
+                            "label":"Choose"
+                        },
+                        {
+                            "key":"Y",
+                            "label":"Yes"
+                        },
+                        {
+                            "key":"N",
+                            "label":"No"
+                        },
+                        {
+                            "key":"Q",
+                            "label":"Used to smoke earlier, not anymore"
+                        }
+                    ],
+                    "value":"",
+                    "primary":true
+                },
+                {
+                    "id":"noofcigratte",
+                    "dependentOn":"smoking",
+                    "label":"HOW MANY CIGARETTES DO YOU SMOKE IN A DAY?",
+                    "type":"range",
+                    "validators":{
+                        "min":"0",
+                        "max":"50"
+                    },
+                    "value":"9",
+                    "dependentValue":"Y"
+                },
+                {
+                    "id":"whenquitsmoking",
+                    "dependentOn":"smoking",
+                    "label":"WHEN DID YOU QUIT SMOKING?",
+                    "type":"dropdown",
+                    "options":[
+                        {
+                            "key":"",
+                            "label":"Choose"
+                        },
+                        {
+                            "key":"MTY",
+                            "label":"More than a year"
+                        },
+                        {
+                            "key":"LTY",
+                            "label":"Less than a year"
+                        },
+                        {
+                            "key":"LTM",
+                            "label":"Less than a month"
+                        },
+                        {
+                            "key":"T",
+                            "label":"Today :D"
+                        }
+                    ],
+                    "value":"",
+                    "dependentValue":"Q"
+                }
+            ]
+        }
+    ]
+}
